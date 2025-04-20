@@ -13,4 +13,4 @@ A simple JavaScript project that calculates tip and total amount based on user i
 3. Click "Calculate" to see the result
 
 ## Demo
-![screenshot](screenshot.png)
+![screenshot](screenshot.PNG)
