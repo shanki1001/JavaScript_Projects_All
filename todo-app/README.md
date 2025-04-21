@@ -17,5 +17,5 @@ This app allows users to add, delete, and persist tasks in the browser using the
 
 ## 📸 Demo Screenshot 
 
-[screenshot.PNG]
+![To-Do App Screenshot](screenshot.PNG)
 
