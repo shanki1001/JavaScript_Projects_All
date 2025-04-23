@@ -23,4 +23,4 @@ screenshot.PNG — A snapshot of the app UI
 
 📸 Output
 
-![App UI screenshot] (screenshot.PNG)
+![App UI screenshot](screenshot.PNG)
