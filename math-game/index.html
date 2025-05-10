@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Math Game</h1>
+    </div>
+    <div class="container">
+      <div class="score">
+        <div id="current-standing" class="score-element">
+          <h2 id="current-score"></h2>
+          <h3 id="level-meter">Level:&nbsp;</h3>
+        </div>
+        <div id="high-score-box" class="score-element">
+          <h3 id="high-score">High Score: 0</h3>
+        </div>
+      </div>
+      <div id="question-container">
+        <div class="subcontainer">
+          <h1 id="number1">45</h1>
+        </div>
+        <div class="subcontainer">
+          <h1 id="operator">+</h1>
+        </div>
+        <div class="subcontainer">
+          <h1 id="number2">54</h1>
+        </div>
+      </div>
+      <div id="ans">
+        <input type="number" id="ans-input" placeholder="Answer" />
+        <button id="ans-btn">Submit</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
