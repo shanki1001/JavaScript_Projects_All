@@ -60,30 +60,47 @@ function increaseScore() {
 }
 function updateHighScore(score) {
   highScore = score;
-  highScoreEle = `High Score: ${highScore}`;
+  highScoreEle.textContent =
+    `High Score:` + highScore.toString().padStart(2, "0");
 }
 
-function endGame() {}
+function endGame() {
+  score = 0;
+  level = 1;
+  currentScore.textContent = score;
+  ansInput.value = "";
+  displayHomeScreen();
+}
+
 function addDetails() {
-  currentScore.innerHTML = score;
+  currentScore.textContent = score.toString().padStart(2, "0");
   levelMeter.innerHTML = `Level: ${level}`;
 }
+
+function checkAnswer() {
+  if (ansInput.value == answer) {
+    increaseScore();
+    addDetails();
+    generateQuestion();
+    ansInput.value = "";
+  } else {
+    if (score > highScore) {
+      updateHighScore(score);
+    }
+    endGame();
+  }
+}
+
 function startGame() {
   addDetails();
   generateQuestion();
-  // ansInput.addEventListener("keydown", () => {});           start from here!
-  ansBtn.addEventListener("click", () => {
-    if (ansInput.value == answer) {
-      increaseScore();
-      addDetails();
-      generateQuestion();
-      currentScore.innerHTML = score;
-      ansInput.value = "";
-    } else {
-      if (score > highScore) {
-        updateHighScore(score);
-      }
+  ansInput.addEventListener("keydown", function (event) {
+    if (event.key == "Enter") {
+      checkAnswer();
     }
+  });
+  ansBtn.addEventListener("click", () => {
+    checkAnswer();
   });
 }
 
