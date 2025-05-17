@@ -1,0 +1,534 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+body {
+   background-color: #c7cfdc;
+}
+::-webkit-scrollbar {
+   width: 12px;
+}
+::-webkit-scrollbar-track {
+   box-shadow: inset 0 0 5px grey;
+   border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+   background: #4b4e8d;
+   border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+   background: #03075f;
+}
+.terminal {
+   display: grid;
+   grid-template-columns: 1fr 3fr;
+   grid-template-rows: 3fr 1fr;
+   grid-template-areas:
+      "photo monitor"
+      "photo-name monitor";
+   height: 50vh;
+   max-height: 50vh;
+   width: 100%;
+   margin-bottom: 30px;
+}
+
+#monitor-container {
+   box-sizing: border-box;
+   height: 100%;
+   width: 98%;
+   font-family: "Courier New", "Courier New", Courier, monospace;
+   color: #0f0;
+   background-color: #000;
+   /* background-color: #000; */
+   overflow-y: scroll;
+}
+#monitor-container::-webkit-scrollbar {
+   width: 8px;
+}
+#monitor-container::-webkit-scrollbar-track {
+   box-shadow: none;
+}
+#monitor-container::-webkit-scrollbar-thumb {
+   background-color: rgb(60, 52, 52);
+}
+.monitor {
+   background-color: black;
+   /* background-color: #000;  */
+   padding: 5px;
+}
+.input-line {
+   display: flex;
+}
+.prompt {
+   margin-right: 10px;
+}
+#command-input {
+   background: none;
+   border: none;
+   color: #0f0;
+   font-family: inherit;
+   font-size: 1em;
+   outline: none;
+   width: 100%;
+}
+
+/* Terminal Photo section */
+#photo {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   grid-area: photo;
+}
+#photo img {
+   border: none;
+   border-radius: 10px;
+   box-shadow: 0.5px 0.5px 3px 1px black;
+   width: 150px;
+   object-fit: contain;
+}
+#photo img:hover {
+   box-shadow: 1px 1px 5px 1px black, -1px -1px 5px black;
+}
+#name-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   grid-area: photo-name;
+}
+
+/* Terminal Monitor Section */
+#monitor-screen-section {
+   display: grid;
+   grid-template-rows: 1fr 4fr;
+   grid-template-areas:
+      "heading"
+      "monitor";
+   grid-area: monitor;
+}
+#heading {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   grid-area: heading;
+}
+
+/* --------- Social Media Section -------------- */
+#social-media-section {
+   display: flex;
+   justify-content: space-around;
+   box-sizing: border-box;
+   padding: 10px 0px;
+   height: 120px;
+   width: 100%;
+   margin-top: 20px;
+   background-color: black;
+}
+#social-media-section a {
+   width: 13%;
+   color: #252c81;
+   text-decoration: none;
+}
+
+.icon {
+   display: flex;
+   box-sizing: border-box;
+   justify-content: center;
+   align-items: center;
+   border-radius: 15px;
+}
+.icon:hover {
+   background-color: #03072f;
+   color: black;
+   box-shadow: 0.5px 0.5px 3px 1px white, -0.5px -0.5px 3px 1px white;
+   font-size: 1.2rem;
+   outline: none;
+}
+
+/* ------------------ sections ------------------ */
+.section {
+   height: 400px;
+   display: grid;
+   grid-template-columns: 2fr 3fr;
+   margin: 30px 0;
+}
+.section-header {
+   grid-column-start: 1;
+   grid-column-end: 2;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+#about-section {
+   height: 350px;
+}
+.section-content {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   box-sizing: border-box;
+   padding: 20px;
+}
+#about-section .section-header {
+   font-size: 2rem;
+}
+#about-section p {
+   font-family: "Roboto", sans-serif;
+   font-weight: bold;
+   line-height: 2rem;
+   font-size: 1.2rem;
+   text-align: center;
+}
+
+/* -------------- Project Section -------------- */
+#project-section {
+   color: white;
+   background-color: black;
+   height: 550px;
+   overflow: visible;
+}
+#project-section .section-header {
+   display: grid;
+   grid-template-rows: 2fr 3fr;
+   grid-template-areas:
+      "project-section-heading"
+      "section-about";
+}
+#project-section-heading {
+   font-size: 3rem;
+   grid-area: project-section-heading;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+}
+#project-header {
+   font-size: 3rem;
+}
+#project-section-about {
+   box-sizing: border-box;
+   padding: 0px 60px;
+   grid-area: section-about;
+   height: 100%;
+   text-align: center;
+   font-size: 1.2em;
+   line-height: 1.4em;
+}
+#project-section .section-content {
+   flex-direction: column;
+   justify-content: space-between;
+   overflow: visible;
+}
+#project-content-heading {
+   color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 80px;
+   font-size: 1.3rem;
+}
+.project-card-section {
+   display: flex;
+   justify-content: space-around;
+   height: 100%;
+   width: 100%;
+}
+.project-button {
+   height: 100%;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.round {
+   border-radius: 50%;
+}
+button {
+   border: none;
+   font-size: 20px;
+   font-weight: bold;
+   height: 50px;
+   width: 50px;
+   padding: 15px;
+}
+button:hover {
+   background-color: #04aa6d;
+   color: white;
+}
+
+/* ------------------ project-card flipper ------------------ */
+.project-card-container {
+   min-width: 380px;
+   max-width: 380px;
+   height: 100%;
+   box-sizing: border-box;
+   border-radius: 15px;
+   perspective: 1000px;
+}
+.project-card-inner {
+   box-sizing: border-box;
+   border-radius: 15px;
+   position: absolute;
+   z-index: -1;
+   width: 100%;
+   height: 100%;
+   transition: transform 0.6s;
+   transform-style: preserve-3d;
+   box-shadow: 0.5px 0.5px 4px 1px #f1f1f1, -0.5px -0.5px 4px 0.5px white;
+}
+.card-grid {
+   display: grid;
+   grid-template-rows: 1.5fr 3fr 0.5fr;
+   grid-template-areas:
+      "project-heading"
+      "project-description"
+      "project-link";
+}
+#project-heading {
+   box-sizing: content-box;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 1.2rem;
+   text-shadow: 0.5px 0.5px white;
+   grid-area: project-heading;
+}
+#project-description {
+   box-sizing: border-box;
+   padding: 20px 20px 0px 20px;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   grid-area: project-description;
+}
+#project-description p {
+   font-size: 1.3rem;
+}
+#project-link {
+   font-size: 1.2rem;
+   display: flex;
+   justify-content: center;
+   grid-area: project-link;
+}
+#project-link a {
+   text-decoration: none;
+   color: white;
+}
+#project-link a:hover {
+   color: red;
+}
+.project-card-front,
+.project-card-back {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   backface-visibility: hidden;
+}
+.project-card-front {
+   background-color: #222222;
+   border-radius: 15px;
+}
+.project-card-back {
+   background-color: #393e46;
+   border-radius: 15px;
+   transform: rotateY(-180deg);
+}
+.project-card {
+   display: grid;
+   grid-template-rows: 1fr 4fr 0.5fr;
+   box-sizing: border-box;
+   box-shadow: 0.5px 0.5px 0.5px 1px #f1f1f1, -0.5px -0.5px 0.5px 0.5px #f1f1f1;
+   border-radius: 15px;
+   min-width: 380px;
+   max-width: 380px;
+   height: 100%;
+}
+
+/* ---------------- Contact ------------- */
+#contact-section {
+   height: 100px;
+}
+
+.contact {
+   background-color: #a35c7a;
+}
+.contact .section-content {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+.social-link-section {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   justify-self: flex-end;
+   display: flex;
+   height: 100%;
+   width: 100%;
+}
+.social-link {
+   height: 100%;
+   width: 100px;
+}
+.social-link a {
+   text-decoration: none;
+   color: none;
+}
+
+.social-link i {
+   color: rgb(30, 48, 80);
+   font-size: 3rem;
+}
+
+.social-link-section .icon {
+   box-shadow: none;
+   padding: 10px;
+}
+.social-link-section .icon:hover {
+   font-size: 1rem;
+   background-color: rgb(30, 48, 80);
+   i {
+      color: #a35c7a;
+   }
+}
+
+/* ---------------- Media Queries ------------ */
+
+@media only screen and (max-width: 600px) {
+   * {
+      padding: 0;
+      margin: 0;
+   }
+   .terminal {
+      height: 40vh;
+      max-width: 100vw;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 40px;
+   }
+   #monitor-screen-section {
+      display: none;
+   }
+   #social-media-section {
+      margin: 0;
+      padding: 10px;
+      height: 200px;
+      display: grid;
+      grid-template-areas:
+         "github leetcode"
+         "linkedin project";
+   }
+   #social-media-section a {
+      width: 30vw;
+      padding: 0;
+      margin: 0;
+      border: 2px white;
+   }
+   #github {
+      grid-area: github;
+   }
+   #leetcode {
+      grid-area: leetcode;
+   }
+   #project {
+      grid-area: project;
+   }
+   #linkedin {
+      grid-area: linkedin;
+   }
+   #about-section {
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+   }
+   #about-section .section-header {
+      height: 30%;
+   }
+   #about-section .section-content {
+      height: 70%;
+   }
+   #about-section .section-content p {
+      padding: 0px 15px 0px 15px;
+      height: 100%;
+   }
+   #project-section {
+      min-height: 180vh;
+      display: flex;
+      flex-direction: column;
+   }
+   #project-section .section-header {
+      min-height: 60vh;
+   }
+   #project-section .section-content {
+      display: block;
+      margin: 0;
+      padding: 0;
+      min-height: 80vh;
+   }
+   #project-content-heading {
+      margin: 20px 0px 30px 0px;
+      padding: 0;
+   }
+   .project-card-section {
+      display: flex;
+      flex-direction: column;
+      height: 69vh;
+   }
+   .project-card-container {
+      min-width: 70vw;
+      margin-left: 15vw;
+      max-width: 70vw;
+      min-height: 50vh;
+      max-height: 50vh;
+   }
+   .project-button {
+      height: 5vh;
+   }
+   #contact-section {
+      font-size: 2rem;
+      display: flex;
+      flex-direction: column;
+      min-height: 40vh;
+   }
+   #social-link-section a {
+      background-color: rgb(30, 48, 80);
+      i {
+         color: #a35c7a;
+      }
+   }
+}
+@media (min-width: 601px) and (max-width: 1023px) {
+   #social-media-section {
+      height: 110px;
+      max-width: 100vw;
+      width: 100%;
+   }
+   #social-media-section .icon {
+      width: 17%;
+      font-size: 0.8rem;
+      box-shadow: 0.3px 0.3px 2px 0.5px white, -0.3px -0.3px 3px 0.5px white;
+   }
+   #project-section {
+      display: flex;
+      flex-direction: column;
+      min-height: 180vh;
+   }
+   #project-section-about {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   #project-section .section-content {
+      height: 90%;
+   }
+}
+
+@media (min-width: 1024px) {
+   #project-card-container {
+      max-height: 400px;
+   }
+}
